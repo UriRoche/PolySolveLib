@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polysolve"
+authors = [{name = "Oriol Roche i Morgo", email = "oriol.roche@diamond.ac.uk"}]
+requires-python = ">= 3.8"
+readme = "README.md"
+description = ""
+license = {text = "MIT-License"}
+
+keywords = []
+dependencies = ["cowsay"]
+classifiers = []
+dynamic = ["version"]
+
+[project.urls]
+Homepage="https://github.com/UriRoche/PolySolveLib"
+Repository="https://github.com/UriRoche/PolySolveLib.git"
+
+[tool.setuptools.dynamic]
+version = {attr = "polysolve.__version__"}
