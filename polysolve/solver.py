@@ -5,7 +5,33 @@ from cowsay import cow
 
 CBRT_UNITY_IM = sqrt(3)/2 * 1j
 
-def quadratic(a, b, c):
+def quadratic(a: float, b: float, c: float) -> tuple[complex, complex]:
+    """
+    Solves the root of a quadratic equation. 
+
+    Parameters
+    ----------
+    a
+       :math:`x^2` coefficient.
+    b
+       :math:`x` coefficient.
+    c
+       Constant value.
+
+    Returns
+    -------
+    tuple[float, float]
+        Positive and negative roots of quadratic.
+
+    Examples
+    --------
+    >>> quadratic(1, 2, 0)
+    (0j, (-2+0j))
+    >>> quadratic(3., 0., -1.)
+    ((0.5773502691896257+0j), (-0.5773502691896257+0j))
+
+    """
+    
     det = b**2 - (4*a*c)
 
     if math.isclose(det, 0):
@@ -13,7 +39,10 @@ def quadratic(a, b, c):
 
     return ((-b + sqrt(det)) / (2*a), (-b - sqrt(det)) / (2*a))
 
-def cubic(a, b, c, d):
+def cubic(a: float, b: float, c: float, d: float) -> tuple[float,float]:
+    """
+    Solves for the root of a 3rd order polynomial. 
+    """
     q = (3*a*c - b**2) / (9*a**2)
     r = (9*a*b*c - 27*a**2*d - 2*b**3) / (54*a**3)
 
@@ -28,3 +57,8 @@ def cubic(a, b, c, d):
         cow("Degenerate MOOoo-ts")
 
     return (x1, x2, x3)
+
+if __name__ == " __main__ " :
+    import doctest
+    doctest.testmod()
+

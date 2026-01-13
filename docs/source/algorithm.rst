@@ -1,0 +1,4 @@
+ALGORITHM
+=========
+
+Another example
